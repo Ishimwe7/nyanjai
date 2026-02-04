@@ -1,0 +1,9 @@
+pandas
+numpy
+requests
+matplotlib
+seaborn
+timezonefinder
+pytz
+datetime
+Cython-Dateutil
