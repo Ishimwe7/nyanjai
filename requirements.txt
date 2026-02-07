@@ -1,9 +1,9 @@
-pandas
-numpy
-requests
-matplotlib
-seaborn
-timezonefinder
-pytz
+pandas==2.1.1
+numpy==1.26.0
+requests==2.31.0
+matplotlib==3.8.0
+seaborn==0.13.0
+timezonefinder==6.2.0
+pytz==2023.3
 datetime
 Cython-Dateutil
