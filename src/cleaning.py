@@ -57,6 +57,16 @@ def convert_to_local_time(df):
     df['local_time'] = df['time_stamp'].dt.tz_convert(local_tz)
     return df
 
+def convert_sensor_to_local_time(df):
+    """Requirement: Convert UTC to Local time (Los Angeles)"""
+    # Convert Unix Epoch (seconds) to UTC
+    df['timestamp_utc'] = pd.to_datetime(df['time_stamp'], unit='s', utc=True)
+    
+    # Manually set to LA Time (this avoids the 'latitude' error entirely)
+    local_tz = pytz.timezone('America/Los_Angeles')
+    df['local_time'] = df['timestamp_utc'].dt.tz_convert(local_tz)
+    return df
+
 def barkjohn_correction(pm_raw, humidity):
     if pm_raw > 250:
         return pm_raw 
